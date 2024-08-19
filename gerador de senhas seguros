@@ -1,0 +1,17 @@
+import random
+import string
+
+def gerar_senha(segura=True, comprimento=12):
+    # Definindo os caracteres que serão usados na geração da senha
+    caracteres = string.ascii_letters + string.digits
+    if segura:
+        caracteres += string.punctuation
+
+    # Gerando a senha
+    senha = ''.join(random.choice(caracteres) for _ in range(comprimento))
+
+    return senha
+
+# Gerando uma senha segura de 12 caracteres
+senha = gerar_senha(segura=True, comprimento=12)
+print("Sua senha segura gerada é:", senha)
